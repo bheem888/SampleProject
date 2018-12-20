@@ -7,7 +7,7 @@ WORKDIR /src
 COPY SampleWebAPI.csproj SampleWebAPI/
 RUN dotnet restore SampleWebAPI/SampleWebAPI.csproj
 COPY . .
-WORKDIR /src/SampleWebAPI
+WORKDIR /src
 RUN dotnet build SampleWebAPI.csproj -c Release -o /app
 
 FROM build AS publish
