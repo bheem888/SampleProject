@@ -4,7 +4,7 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY SampleWebAPI/SampleWebAPI.csproj SampleWebAPI/
+COPY SampleWebAPI.csproj SampleWebAPI/
 RUN dotnet restore SampleWebAPI/SampleWebAPI.csproj
 COPY . .
 WORKDIR /src/SampleWebAPI
