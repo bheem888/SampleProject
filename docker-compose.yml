@@ -1,6 +1,5 @@
-version: "3.7"
-    environment:     
+version: "3.7"  
     image: "bheem888/sampledokcerctr/latest"
     restart: always
     ports:
-      - "80:80"
+      - "6570:80"
