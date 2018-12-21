@@ -1,11 +1,6 @@
 version: "3.7"
-services:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=${TARGET_ENVIRONMENT}
-    image: "281890983180.dkr.ecr.us-east-1.amazonaws.com/testsuitescheduler:${TAG}"
-    restart: always
-  SampleWebAPI:
-    image: "bheem888 / sampledokcerctr:latest"
+    environment:     
+    image: "bheem888/sampledokcerctr/latest"
     restart: always
     ports:
       - "80:80"
