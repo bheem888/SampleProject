@@ -1,4 +1,6 @@
-version: "3.7"  
+version: "3.7"
+services:
+  samplewebapi:
     image: "bheem888/sampledokcerctr/latest"
     restart: always
     ports:
