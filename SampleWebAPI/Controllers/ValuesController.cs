@@ -19,7 +19,7 @@ namespace SampleWebAPI.Controllers
         {
             try
             {
-                MongoClient client = new MongoClient("mongodb://10.0.0.20:27018");
+                MongoClient client = new MongoClient("mongodb://mongo:27018");
 
                 var database = client.GetDatabase("DemoDB");
                 return new string[] { database.DatabaseNamespace.DatabaseName, "value2" };
