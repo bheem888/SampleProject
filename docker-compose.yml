@@ -4,12 +4,12 @@ services:
         image: bheem888/sampledokcerctr:latest
         restart: always
         ports:
-        - "6570:80"		
-        
+        - "6570:80"
+
     mongo:
         image: "mongo:4.1.5"
         ports:
-            - "27017:27017"
+            - "27018:27017"
         volumes:
             - /home/stat/sampletest/samplewebapi-db:/data/db
         restart: always
