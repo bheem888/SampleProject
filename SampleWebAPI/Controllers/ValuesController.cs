@@ -54,13 +54,5 @@ namespace SampleWebAPI.Controllers
         public void Delete(int id)
         {
         }
-    }
-
-    public class Person
-    {
-        public ObjectId Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
-    }
+    }   
 }
