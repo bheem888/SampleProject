@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
+using MongoDB.Driver;
+
 
 namespace SampleWebAPI.Controllers
 {
@@ -14,7 +17,17 @@ namespace SampleWebAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                MongoClient client = new MongoClient("mongo://mongo:27018");
+
+                var database = client.GetDatabase("DemoDB");
+                return new string[] { database.DatabaseNamespace.DatabaseName, "value2" };
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }           
         }
 
         // GET api/values/5
@@ -41,5 +54,13 @@ namespace SampleWebAPI.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class Person
+    {
+        public ObjectId Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
     }
 }
