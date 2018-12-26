@@ -1,7 +1,15 @@
-version: "3.7"
+version: "3.4"
 services:
     samplewebapi:
-    image: "bheem888/sampledokcerctr/latest"
-    restart: always
-    ports:
-      - "6570:80"
+        image: bheem888/sampledokcerctr:latest
+        restart: always
+        ports:
+        - "6570:80"
+
+    mongo:
+        image: "mongo:4.1.5"
+        ports:
+            - "27018:27017"
+        volumes:
+            - /home/stat/sampletest/samplewebapi-db:/data/db
+        restart: always
